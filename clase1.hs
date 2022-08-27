@@ -43,5 +43,33 @@ cantidadDeSoluciones b c | d > 0 = 2
                          | otherwise = 0
                          where d = b ** 2 - 4 * c
 
+-- calcular valor absoluto de un numero entero 
+absoluto n | n == 0 = 0 | n > 0 = n | n < 0 = (-n)
 
+-- devuelve el maximo entre el valor absoluto de dos numeros enteros
+
+maximoAbsoluto n m | (absoluto n) >= (absoluto m) = (absoluto n) | otherwise = (absoluto m)
+
+-- devuelve el maximo entre tres numeros enteros
+
+maximo3 x y z | x > y && x > z = x | y > x && y > z = y | otherwise = z
+
+-- dados dos nuemeros racionales, decide si alguno -- de los dos es igual a cero
+
+algunoEs0 :: Float -> Float -> Bool algunoEs0 x y | x == 0 || y == 0 = True | otherwise = False
+
+-- dados dos numeros, decide si ambos son cero
+
+ambosSon0 :: Float -> Float -> Bool ambosSon0 x y | x == 0 && y == 0 = True | otherwise = False
+
+-- dados dos numeros naturales, decide si el primero es multiplo del segundo 
+esMultiploDe :: Int -> Int-> Bool esMultiploDe x y | mod x y == 0 = True | otherwise = False
+
+--dado un numero natural, extrae su digito de las unidades
+
+digitoUnidades :: Int -> Int digitoUnidades x = mod x 10
+
+--dado un numero natural, extrae su digito de las decenas
+
+digitoDecenas :: Int -> Int digitoDecenas x = mod (div x 10) 10
 
